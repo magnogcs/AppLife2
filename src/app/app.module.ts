@@ -8,6 +8,9 @@ import { PostPage } from '../pages/post/post';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
+import { ComunhaoPage } from '../pages/comunhao/comunhao';
+import { RelacionamentoPage } from '../pages/relacionamento/relacionamento';
+import { MissaoPage } from '../pages/missao/missao';
 
 import { WordpressService } from '../services/wordpress.service';
 import { AuthenticationService } from '../services/authentication.service';
@@ -22,7 +25,10 @@ import { NativeStorage } from '@ionic-native/native-storage';
     PostPage,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ComunhaoPage,
+    RelacionamentoPage,
+    MissaoPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,10 @@ import { NativeStorage } from '@ionic-native/native-storage';
     PostPage,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ComunhaoPage,
+    RelacionamentoPage,
+    MissaoPage
   ],
   providers: [
     StatusBar,

@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { PostPage } from '../post/post';
 import { LoginPage } from '../login/login';
-import { RelacionamentoPage } from '../relacionamento/relacionamento';
-import { ComunhaoPage } from '../comunhao/comunhao';
+import { HomePage } from '../home/home';
 import { MissaoPage } from '../missao/missao';
+import { ComunhaoPage } from '../comunhao/comunhao';
 import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import { WordpressService } from '../../services/wordpress.service';
 import { AuthenticationService } from '../../services/authentication.service';
 
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-relacionamento',
+  templateUrl: 'relacionamento.html'
 })
-export class HomePage {
+export class RelacionamentoPage {
 
 	posts: Array<any> = new Array<any>();
   morePagesAvailable: boolean = true;
@@ -93,13 +93,13 @@ export class HomePage {
   goToLogin(){
     this.navCtrl.push(LoginPage);
   }
-  goRelacionamento(){
-    this.navCtrl.setRoot(RelacionamentoPage);
+  goMissao(){
+    this.navCtrl.push(MissaoPage);
   }
   goComunhao(){
     this.navCtrl.setRoot(ComunhaoPage);
-  }
-  goMissao(){
-    this.navCtrl.setRoot(MissaoPage);
+}
+  Post(){
+      this.navCtrl.push(HomePage);
   }
 }
