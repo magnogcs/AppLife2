@@ -17,7 +17,6 @@ import { AuthenticationService } from '../../services/authentication.service';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
 	posts: Array<any> = new Array<any>();
   morePagesAvailable: boolean = true;
   loggedUser: boolean = false;

@@ -1,0 +1,24 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>playlist</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+      <button ion-item *ngFor="let video of videos | async" (click)="openVideo(video)">
+          <ion-thumbnail item-start>
+              <img [src]="video.snippet.thumbnails.default.url">
+          </ion-thumbnail>
+          <h2>
+            {{video.snippet.title}}
+          </h2>
+          <p>{{ video.snippet.publishedAt | date: 'short' }}</p>
+        </button>
+  </ion-list>
+
+</ion-content>

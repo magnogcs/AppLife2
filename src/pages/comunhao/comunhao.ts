@@ -7,28 +7,42 @@ import { MissaoPage } from '../missao/missao';
 import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import { WordpressService } from '../../services/wordpress.service';
 import { AuthenticationService } from '../../services/authentication.service';
+import { VideosPage } from '../videos/videos';
+import {Observable} from 'rxjs/Observable';
+import {YtProvider} from './../../providers/yt/yt';
+import { AlertController } from 'ionic-angular/components/alert/alert-controller';
+import { PlaylistPage } from '../playlist/playlist';
+
 
 
 @Component({
   selector: 'page-comunhao',
   templateUrl: 'comunhao.html'
 })
+
+
+
 export class ComunhaoPage {
 
+
+  
 	posts: Array<any> = new Array<any>();
   morePagesAvailable: boolean = true;
   loggedUser: boolean = false;
 
   categoryId: number;
   categoryTitle: string;
-
+  
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public loadingCtrl: LoadingController,
     public wordpressService: WordpressService,
-    public authenticationService: AuthenticationService
+    public authenticationService: AuthenticationService,
+    private ytProvider: YtProvider,
+    private alertCtrl: AlertController
   ) {}
+
 
   ionViewWillEnter() {
     this.authenticationService.getUser()
@@ -101,5 +115,35 @@ export class ComunhaoPage {
   }
   Post(){
       this.navCtrl.push(HomePage);
+  }
+  channelId='UCCHvPQKfxL4nYPkZjJ6yTZg ';
+  playlists: Observable<any[]>;
+
+searchPlaylists(){
+  this.playlists = this.ytProvider.getPlaylistsForChannel(this.channelId);
+  this.playlists.subscribe(data=>{
+    console.log('data', data);
+  }, 
+
+  
+  err =>{
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: 'Nenhuma playlist encontrada',
+      buttons: ['OK']
+    });
+    alert.present();
+    
+  })
+  
+}
+ openPlaylistId(id){
+   this.navCtrl.push(PlaylistPage, {id: id});
+ }
+ goVideos(){
+  this.navCtrl.push(VideosPage);
+ }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad VideosPage');
   }
 }

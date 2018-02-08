@@ -20,6 +20,10 @@ import { AuthenticationService } from '../services/authentication.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { YtProvider } from '../providers/yt/yt';
+import {YoutubeVideoPlayer} from '@ionic-native/youtube-video-player';
+import { PlaylistPage } from '../pages/playlist/playlist';
+import { VideosPage } from '../pages/videos/videos';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { NativeStorage } from '@ionic-native/native-storage';
     ComunhaoPage,
     RelacionamentoPage,
     MissaoPage,
-    TabsPage
+    TabsPage,
+    PlaylistPage,
+    VideosPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,9 @@ import { NativeStorage } from '@ionic-native/native-storage';
     ComunhaoPage,
     RelacionamentoPage,
     MissaoPage,
-    TabsPage
+    TabsPage,
+    PlaylistPage,
+    VideosPage
   ],
   providers: [
     StatusBar,
@@ -56,7 +64,9 @@ import { NativeStorage } from '@ionic-native/native-storage';
     NativeStorage,
     WordpressService,
     AuthenticationService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    YtProvider,
+    YoutubeVideoPlayer
   ]
 })
 export class AppModule {}
