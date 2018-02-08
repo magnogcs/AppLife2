@@ -1,3 +1,4 @@
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
@@ -11,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { ComunhaoPage } from '../pages/comunhao/comunhao';
 import { RelacionamentoPage } from '../pages/relacionamento/relacionamento';
 import { MissaoPage } from '../pages/missao/missao';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { WordpressService } from '../services/wordpress.service';
 import { AuthenticationService } from '../services/authentication.service';
@@ -28,7 +30,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
     RegisterPage,
     ComunhaoPage,
     RelacionamentoPage,
-    MissaoPage
+    MissaoPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
     RegisterPage,
     ComunhaoPage,
     RelacionamentoPage,
-    MissaoPage
+    MissaoPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

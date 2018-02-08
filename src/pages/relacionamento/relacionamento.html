@@ -18,11 +18,7 @@
           </div>
       </ion-header>
     <style>
-      .padding p, h2{
-        padding-left: 70px !important;
-        
-        
-      }
+    
       .padding{
         min-height: 86px;
       }
@@ -39,7 +35,7 @@
         transform: translate3d(0, 0, 0);
         width: 100%;}
     </style>
-      <ion-footer>
+      <!--ion-footer>
           
             <ion-toolbar>
                     <ion-segment [(ngModel)]="icons" color="danger">
@@ -55,7 +51,7 @@
                     </ion-segment>
                   </ion-toolbar>
           
-           </ion-footer>
+           </ion-footer-->
     <!--ion-header>
       <ion-navbar color="primary">
         <ion-title *ngIf="!categoryTitle">Recent posts</ion-title>
@@ -88,38 +84,46 @@
     <ion-content class="content">
       <ion-card (click)="Post()" >
         <ion-card-content  class="padding">
-            <ion-avatar item-start>
-                <img class="avatar" src="../../assets/img/bg-teste.jpeg">
-            </ion-avatar>
-          <ion-card-title><h2><strong>Encontro Life</strong></h2></ion-card-title>
-          <p>Descrição</p>
+                <ion-item>
+                        <ion-avatar item-start>
+                            <img src="../../assets/img/bg-teste.jpeg">
+                        </ion-avatar>
+                        <h2><strong>Encontro Life</strong></h2>
+                        <p>Descrição</p>
+                      </ion-item>
         </ion-card-content>
       </ion-card>
       <ion-card >
           <ion-card-content class="padding">
-              <ion-avatar item-start>
-                  <img class="avatar" src="../../assets/img/bg-teste.jpeg">
-              </ion-avatar>
-            <ion-card-title><h2><strong>Espaço Life</strong></h2></ion-card-title>
-            <p>Descrição</p>
+                <ion-item>
+                        <ion-avatar item-start>
+                            <img src="../../assets/img/bg-teste.jpeg">
+                        </ion-avatar>
+                        <h2><strong>Espaço Life</strong></h2>
+                        <p>Descrição</p>
+                      </ion-item>
           </ion-card-content>
         </ion-card>
         <ion-card >
             <ion-card-content class="padding">
-                <ion-avatar item-start>
-                    <img class="avatar" src="../../assets/img/bg-teste.jpeg">
-                </ion-avatar>
-              <ion-card-title><h2><strong>Finanças para jovens</strong></h2></ion-card-title>
-              <p>Descrição</p>
+                    <ion-item>
+                            <ion-avatar item-start>
+                                <img src="../../assets/img/bg-teste.jpeg">
+                            </ion-avatar>
+                            <h2><strong>Finanças para Jovens</strong></h2>
+                            <p>Descrição</p>
+                          </ion-item>
             </ion-card-content>
           </ion-card>
           <ion-card >
               <ion-card-content class="padding">
-                  <ion-avatar item-start>
-                      <img class="avatar" src="../../assets/img/bg-teste.jpeg">
-                  </ion-avatar>
-                <ion-card-title><h2><strong>Te vejo na sexta</strong></h2></ion-card-title>
-                <p>Descrição</p>
+                    <ion-item>
+                            <ion-avatar item-start>
+                                <img src="../../assets/img/bg-teste.jpeg">
+                            </ion-avatar>
+                            <h2><strong>Te vejo na Sexta</strong></h2>
+                            <p>Descrição</p>
+                          </ion-item>
               </ion-card-content>
             </ion-card>
       <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="doInfinite($event)">

@@ -39,7 +39,7 @@ background-size: cover;
     transform: translate3d(0, 0, 0);
     width: 100%;}
 </style>
-  <ion-footer>
+  <!--ion-footer>
       
       <ion-toolbar>
           <ion-segment [(ngModel)]="icons" color="danger">
@@ -55,7 +55,7 @@ background-size: cover;
           </ion-segment>
         </ion-toolbar>
       
-       </ion-footer>
+       </ion-footer-->
 <!--ion-header>
   <ion-navbar color="primary">
     <ion-title *ngIf="!categoryTitle">Recent posts</ion-title>
@@ -85,7 +85,7 @@ width: 56px;
 }</style>
 
 
-<ion-content class="content">
+<ion-content padding class="content">
   <ion-card (click)="postTapped($event, post)" *ngFor="let post of posts" >
     <ion-card-content >
       <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
@@ -146,4 +146,5 @@ width: 56px;
     loadingText="Carregando ...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+ 
 </ion-content>

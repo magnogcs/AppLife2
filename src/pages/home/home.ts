@@ -9,6 +9,9 @@ import { WordpressService } from '../../services/wordpress.service';
 import { AuthenticationService } from '../../services/authentication.service';
 
 
+
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
