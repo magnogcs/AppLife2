@@ -11,7 +11,7 @@ import { PlaylistPage } from '../playlist/playlist';
   templateUrl: 'videos.html',
 })
 export class VideosPage {
-  channelId='UCCHvPQKfxL4nYPkZjJ6yTZg ';
+  channelId='UC8AAddLbCSV--CtDpwaxAgA';
   playlists: Observable<any[]>;
 
   constructor(public navCtrl: NavController, private ytProvider: YtProvider, private alertCtrl: AlertController) {

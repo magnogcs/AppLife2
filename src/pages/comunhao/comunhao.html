@@ -1,4 +1,3 @@
-
 <ion-header>
         <ion-toolbar color="danger">
             <button ion-button menuToggle left>
@@ -13,7 +12,7 @@
               </button>
             </ion-buttons>
           </ion-toolbar>
-          <div class="hero slide-up" style="height: 100px; background-image:url('../../assets/img/bg-teste.jpeg')">
+          <div class="hero slide-up" style="height: 32vh; background-image:url('../../assets/img/bg-comunhao.jpeg')">
             
           </div>
       </ion-header>
@@ -83,8 +82,8 @@
     }</style>
     
     
-    <ion-content class="content">
-      <ion-card (click)="Post()" >
+    <ion-content>
+      <ion-card (click)="goVideos()">
         <ion-card-content  class="padding">
           <ion-item>
             <ion-avatar item-start>
@@ -95,7 +94,7 @@
           </ion-item>
         </ion-card-content>
       </ion-card>
-      <ion-card >
+      <ion-card (click)="goToCategoryPosts('4', 'Ponto1')">
           <ion-card-content class="padding">
               <ion-item>
                   <ion-avatar item-start>

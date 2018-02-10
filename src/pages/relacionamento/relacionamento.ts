@@ -42,7 +42,7 @@ export class RelacionamentoPage {
     this.categoryId = this.navParams.get('id');
     this.categoryTitle = this.navParams.get('title');
 
-    if(!(this.posts.length > 0)){
+    /*if(!(this.posts.length > 0)){
       let loading = this.loadingCtrl.create();
       loading.present();
 
@@ -54,7 +54,7 @@ export class RelacionamentoPage {
         }
         loading.dismiss();
       });
-    }
+    }*/
   }
 
   postTapped(event, post) {

@@ -45,8 +45,8 @@ export class HomePage {
     this.categoryTitle = this.navParams.get('title');
 
     if(!(this.posts.length > 0)){
-      let loading = this.loadingCtrl.create();
-      loading.present();
+     // let loading = this.loadingCtrl.create();
+      //loading.present();
 
       this.wordpressService.getRecentPosts(this.categoryId)
       .subscribe(data => {
@@ -54,7 +54,7 @@ export class HomePage {
           post.excerpt.rendered = post.excerpt.rendered.split('<a')[0] + "</p>";
           this.posts.push(post);
         }
-        loading.dismiss();
+      //  loading.dismiss();
       });
     }
   }

@@ -56,7 +56,7 @@ export class ComunhaoPage {
     this.categoryId = this.navParams.get('id');
     this.categoryTitle = this.navParams.get('title');
 
-    if(!(this.posts.length > 0)){
+    /*if(!(this.posts.length > 0)){
       let loading = this.loadingCtrl.create();
       loading.present();
 
@@ -68,7 +68,7 @@ export class ComunhaoPage {
         }
         loading.dismiss();
       });
-    }
+    }*/
   }
 
   postTapped(event, post) {
@@ -145,5 +145,12 @@ searchPlaylists(){
  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideosPage');
+  }
+
+  goToCategoryPosts(categoryId, categoryTitle){
+    this.navCtrl.push(HomePage, {
+      id: categoryId,
+      title: categoryTitle
+    })
   }
 }

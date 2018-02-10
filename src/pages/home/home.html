@@ -4,7 +4,7 @@
         <button ion-button menuToggle left>
           <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>
+        <ion-title *ngFor="let category of categories">
           Title
         </ion-title>
         <ion-buttons end>
