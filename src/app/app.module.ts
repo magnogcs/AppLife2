@@ -13,6 +13,7 @@ import { ComunhaoPage } from '../pages/comunhao/comunhao';
 import { RelacionamentoPage } from '../pages/relacionamento/relacionamento';
 import { MissaoPage } from '../pages/missao/missao';
 import { TabsPage } from '../pages/tabs/tabs';
+import { CommentPage } from '../pages/comment/comment';
 
 import { WordpressService } from '../services/wordpress.service';
 import { AuthenticationService } from '../services/authentication.service';
@@ -37,7 +38,10 @@ import { VideosPage } from '../pages/videos/videos';
     MissaoPage,
     TabsPage,
     PlaylistPage,
-    VideosPage
+    VideosPage,
+    CommentPage
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ import { VideosPage } from '../pages/videos/videos';
     MissaoPage,
     TabsPage,
     PlaylistPage,
-    VideosPage
+    VideosPage,
+    CommentPage
+    
   ],
   providers: [
     StatusBar,

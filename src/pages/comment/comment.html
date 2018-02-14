@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Comentar</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span primary showWhen="ios">Cencel</span>
+        <ion-icon name="close" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <form #f="ngForm">
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input
+        [(ngModel)]="author_name"
+        name="author_name"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input
+        [(ngModel)]="author_email"
+        name="author_email"
+        type="text"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Comentário</ion-label>
+      <ion-textarea
+        [(ngModel)]="content"
+        name="content"
+        required
+      ></ion-textarea>
+    </ion-item>
+    <button ion-button block
+      type="submit"
+      full
+      [disabled]="f.valid === false"
+      (click)="doComment(f.value,$event)"
+    >Postar comentário</button>
+  </form>
+
+</ion-content>

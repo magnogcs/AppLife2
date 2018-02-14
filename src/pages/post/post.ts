@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavParams, NavController, LoadingController, AlertController } from 'ionic-angular';
+import { NavParams, NavController, LoadingController, AlertController, ModalController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { HomePage } from '../home/home';
 import { WordpressService } from '../../services/wordpress.service';
@@ -7,6 +7,8 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/forkJoin';
+import { CommentPage } from '../comment/comment';
+import {Http} from '@angular/http';
 
 @Component({
   selector: 'page-post',
@@ -19,17 +21,30 @@ export class PostPage {
   comments: Array<any> = new Array<any>();
   categories: Array<any> = new Array<any>();
   morePagesAvailable: boolean = true;
-
+  datas:any = [];
+  
   constructor(
     public navParams: NavParams,
+    params: NavParams,
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     public wordpressService: WordpressService,
-    public authenticationService: AuthenticationService
+    public authenticationService: AuthenticationService,
+    private modalCtrl: ModalController,
+    private http: Http
   ) {
+    this.http.get(params.data.url+"/?_embed").subscribe(data=>{
+      this.datas.push(data.json());
 
+      this.http.get(data.json()._links.replies[0].href).subscribe(comment=>{
+        this.comments = comment.json()
+      });
+
+    });
   }
+
+  
 
   ionViewWillEnter(){
     this.morePagesAvailable = true;
@@ -84,7 +99,15 @@ export class PostPage {
     })
   }
 
-  createComment(){
+  openCommentPage(url){
+    let modal = this.modalCtrl.create(CommentPage,{
+      url:url
+    });
+    modal.present()
+  }
+
+
+  /*createComment(){
     let user: any;
 
     this.authenticationService.getUser()
@@ -152,5 +175,5 @@ export class PostPage {
       });
     alert.present();
     });
-  }
+  }*/
 }

@@ -7,6 +7,7 @@ import { LoginPage } from '../pages/login/login';
 import { AuthenticationService } from '../services/authentication.service';
 import { TabsPage } from '../pages/tabs/tabs';
 import {VideosPage} from '../pages/videos/videos';
+import { CommentPage} from '../pages/comment/comment'
 
 @Component({
   templateUrl: 'app.html'
@@ -29,10 +30,10 @@ export class MyApp {
           authenticationService.validateAuthToken(data.token)
           .subscribe(
             res => this.rootPage = HomePage,
-            err =>   this.rootPage = HomePage
+            err =>   this.rootPage = LoginPage
           )
         },
-        err => this.rootPage = HomePage
+        err => this.rootPage = LoginPage
       );
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

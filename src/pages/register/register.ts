@@ -30,8 +30,8 @@ export class RegisterPage {
   }
 
   onSubmit(values){
-    var username: 'aa'; // this should be an administrator Username
-    var password: 'aa'; // this should be an administrator Password
+    var username: 'root'; // this should be an administrator Username
+    var password: 'root'; // this should be an administrator Password
     //only authenticated administrators can create users
     this.authenticationService.doLogin(username, password)
     .subscribe(

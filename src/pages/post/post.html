@@ -47,6 +47,9 @@
 </ion-content>
 <ion-footer>
  <ion-toolbar>
-  <button ion-button block (click)="createComment()">Add a Comment</button>
+  <!--button ion-button block (click)="createComment()">Add a Comment</button-->
+  <button ion-button block
+  (click)="openCommentPage(post._links.replies[0].href)"
+>Fazer um comentário</button>
  </ion-toolbar>
 </ion-footer>

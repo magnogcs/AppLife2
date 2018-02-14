@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { HomePage } from '../home/home'
-import { RegisterPage } from '../register/register'
+import { HomePage } from '../home/home';
+import { ComunhaoPage } from '../comunhao/comunhao';
+import { RegisterPage } from '../register/register';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { WordpressService } from '../../services/wordpress.service';
@@ -43,9 +44,9 @@ export class LoginPage {
          displayname: res.json().user_display_name,
          email: res.json().user_email
        });
-
+console.log(res);
        loading.dismiss();
-       this.navCtrl.setRoot(HomePage);
+       this.navCtrl.setRoot(ComunhaoPage);
      },
      err => {
        loading.dismiss();
