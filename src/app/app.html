@@ -1,1 +1,17 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+<ion-menu persistent="true" [content]="content" (ionClose)="collapseMenuOptions()">
+        <ion-header>
+            <ion-toolbar color="danger">
+                <ion-title>Menu</ion-title>
+            </ion-toolbar>
+        </ion-header>
+    
+        <ion-content>
+    
+            <!-- Side Menu -->
+            <side-menu-content [settings]="sideMenuSettings" [options]="options" (selectOption)="selectOption($event)"></side-menu-content>
+    
+        </ion-content>
+    </ion-menu>
+    
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

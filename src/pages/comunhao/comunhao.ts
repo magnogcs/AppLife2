@@ -4,7 +4,7 @@ import { LoginPage } from '../login/login';
 import { HomePage } from '../home/home';
 import { RelacionamentoPage } from '../relacionamento/relacionamento';
 import { MissaoPage } from '../missao/missao';
-import { NavController, LoadingController, NavParams } from 'ionic-angular';
+import { NavController, LoadingController, NavParams, Events  } from 'ionic-angular';
 import { WordpressService } from '../../services/wordpress.service';
 import { AuthenticationService } from '../../services/authentication.service';
 import { VideosPage } from '../videos/videos';
@@ -12,6 +12,10 @@ import {Observable} from 'rxjs/Observable';
 import {YtProvider} from './../../providers/yt/yt';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { PlaylistPage } from '../playlist/playlist';
+import { App, MenuController } from 'ionic-angular';
+import { SideMenuRedirectEvent, SideMenuRedirectEventData } from '../menu/models/side-menu-redirect-events';
+
+
 
 
 
@@ -34,13 +38,14 @@ export class ComunhaoPage {
   categoryTitle: string;
   
   constructor(
-    public navCtrl: NavController,
+    public navCtrl: NavController, private eventCtrl: Events,
     public navParams: NavParams,
     public loadingCtrl: LoadingController,
     public wordpressService: WordpressService,
     public authenticationService: AuthenticationService,
     private ytProvider: YtProvider,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    
   ) {}
 
 
@@ -153,4 +158,30 @@ searchPlaylists(){
       title: categoryTitle
     })
   }
+
+  public goToOption(): void {
+		// Since we're redirecting to a page without clicking the option from the
+		// side menu, we need to use events to tell the side menu component
+		// which option should be marked as selected.
+		let redirectData: SideMenuRedirectEventData = {
+			displayName: 'Option 1'
+		};
+		this.eventCtrl.publish(SideMenuRedirectEvent, redirectData);
+
+		// Now we can set that page as root
+		this.navCtrl.setRoot(MissaoPage, { title: 'Option 1' });
+	}
+
+	public goToSubOption(): void {
+		// Since we're redirecting to a page without clicking the option from the
+		// side menu, we need to use events to tell the side menu component
+		// which option should be marked as selected.
+		let redirectData: SideMenuRedirectEventData = {
+			displayName: 'Sub Option 2'
+		};
+		this.eventCtrl.publish(SideMenuRedirectEvent, redirectData);
+
+		// Now we can set that page as root
+		this.navCtrl.setRoot(MissaoPage, { title: 'Sub Option 2' });
+	}
 }

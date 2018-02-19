@@ -25,6 +25,7 @@ import { YtProvider } from '../providers/yt/yt';
 import {YoutubeVideoPlayer} from '@ionic-native/youtube-video-player';
 import { PlaylistPage } from '../pages/playlist/playlist';
 import { VideosPage } from '../pages/videos/videos';
+import { SideMenuContentComponent } from '../pages/menu/side-menu-content.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VideosPage } from '../pages/videos/videos';
     TabsPage,
     PlaylistPage,
     VideosPage,
-    CommentPage
+    CommentPage,
+    SideMenuContentComponent
     
     
   ],
