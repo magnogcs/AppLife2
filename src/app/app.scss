@@ -14,3 +14,6 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-item.item-ios.item.item-block, ion-item.item-md.item.item-block, ion-item.item-wp.item.item-block{
+    border: none !important;
+}
