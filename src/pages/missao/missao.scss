@@ -1,8 +1,13 @@
-page-post {
+page-missao {
     .post {
       padding: 6px;
     }
-  
+    .grid{
+      padding: 0 !important;
+  }
+  .col {
+      padding: 0 !important;
+  }
     .post-title{
       display: block;
       font-size: 1.8rem;

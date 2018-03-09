@@ -14,6 +14,7 @@ import { SideMenuContentComponent } from '../pages/menu/side-menu-content.compon
 import { SideMenuSettings } from '../pages/menu/models/side-menu-settings';
 import { MenuOptionModel } from '../pages/menu/models/menu-option-model';
 import { MissaoPage } from '../pages/missao/missao';
+import { IndexPage } from '../pages/index/index';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class MyApp {
 	// Get the instance to call the public methods
 	@ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
 
-  rootPage:any = TabsPage;
+  rootPage:any = IndexPage;
 
 	// Options to show in the SideMenuComponent
 	public options: Array<MenuOptionModel>;
@@ -83,7 +84,7 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 		// ------------------------------------------
 		this.options.push({
 			iconName: 'home',
-			displayName: 'Home',
+			displayName: 'Comunhão',
 			component: HomePage,
 
 			// This option is already selected
@@ -92,13 +93,37 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 
 		this.options.push({
 			iconName: 'bookmarks',
-			displayName: 'Biblía',
+			displayName: 'Relacionamento',
 			component: MissaoPage
 		});
 
 		this.options.push({
 			iconName: 'chatbubbles',
-			displayName: 'Chat',
+			displayName: 'Missão',
+			component: MissaoPage
+		});
+
+		this.options.push({
+			iconName: 'chatbubbles',
+			displayName: 'Vídeos',
+			component: MissaoPage
+		});
+
+		this.options.push({
+			iconName: 'chatbubbles',
+			displayName: 'Materiais',
+			component: MissaoPage
+		});
+
+		this.options.push({
+			iconName: 'chatbubbles',
+			displayName: 'Lição',
+			component: MissaoPage
+		});
+
+		this.options.push({
+			iconName: 'chatbubbles',
+			displayName: 'Bíblia',
 			component: MissaoPage
 		});
 /*

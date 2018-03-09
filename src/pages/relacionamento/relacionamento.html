@@ -1,24 +1,21 @@
 
-<ion-header>
-        <ion-toolbar color="danger">
-            <button ion-button menuToggle left>
+
+      <ion-header>
+          <ion-navbar color="danger">
+            <button ion-button menuToggle>
               <ion-icon name="menu"></ion-icon>
             </button>
-            <ion-title>
-              Relacionamento
-            </ion-title>
-            <ion-buttons end>
-              <button ion-button (click)="doClick()">
-                <ion-icon name="more"></ion-icon>
-              </button>
-            </ion-buttons>
-          </ion-toolbar>
-          <div class="hero slide-up" style="height: 32vh; background-image:url('assets/img/bg-relacionamento.jpeg')">
-            
-          </div>
-      </ion-header>
+            <ion-title>Home</ion-title>
+          </ion-navbar>
+         
+        </ion-header>
+      
+  
+  
     <style>
-    
+      .padding p, h2{
+     
+      }
       .padding{
         min-height: 86px;
       }
@@ -35,39 +32,6 @@
         transform: translate3d(0, 0, 0);
         width: 100%;}
     </style>
-      <!--ion-footer>
-          
-            <ion-toolbar>
-                    <ion-segment [(ngModel)]="icons" color="danger">
-                      <ion-segment-button (click)="goComunhao()" value="camera">
-                        <ion-icon name="camera"></ion-icon>
-                      </ion-segment-button>
-                      <ion-segment-button (click)="goRelacionamento()" value="bookmark">
-                        <ion-icon name="bookmark"></ion-icon>
-                      </ion-segment-button>
-                      <ion-segment-button (click)="goMissao()" value="teste">
-                          <ion-icon name="bookmark"></ion-icon>
-                        </ion-segment-button>
-                    </ion-segment>
-                  </ion-toolbar>
-          
-           </ion-footer-->
-    <!--ion-header>
-      <ion-navbar color="primary">
-        <ion-title *ngIf="!categoryTitle">Recent posts</ion-title>
-        <ion-title *ngIf="categoryTitle">{{categoryTitle}} posts</ion-title>
-        <ion-buttons *ngIf="loggedUser" end>
-          <button ion-button icon-only (click)="logOut()">
-            <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
-          </button>
-        </ion-buttons>
-        <ion-buttons *ngIf="!loggedUser" end>
-          <button ion-button icon-only (click)="goToLogin()">
-            <ion-icon class="toolbar-icon" name="log-in"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-navbar>
-    </ion-header-->
     <style>
       .avatar{
       background-position: center;
@@ -81,51 +45,94 @@
     }</style>
     
     
-    <ion-content class="content">
-      <ion-card (click)="Post()" >
+    <ion-content>
+        <div class="hero slide-up gradient" style="box-shadow:none;height: 32vh; background-image:url('assets/img/relacionamento-capa.png')">
+            
+        </div>
+        <ion-grid style="margin-top: 20px;">
+            <ion-row align-items-start>
+              <ion-col>
+                  <div (click)="goToCategoryPosts('2', 'Primeiro Deus')" class="hero slide-up gradient" style="height:14.4vh; width: auto; background-image:url('assets/img/encontro.png')">
+            
+                  </div>
+              </ion-col>
+            
+            
+            </ion-row>
+          </ion-grid>
+  
+          <ion-grid>
+              <ion-row align-items-start>
+                <ion-col>
+                    <div (click)="goVideos()" class="hero slide-up gradient" style="height: 14.4vh; width: auto;background-image:url('assets/img/espaco.png')">
+              
+                    </div>
+                </ion-col>
+               
+              
+              </ion-row>
+            </ion-grid>
+
+            <ion-grid>
+                <ion-row align-items-start>
+                  <ion-col>
+                      <div class="hero slide-up gradient" style="height: 14.4vh; width: auto;background-image:url('assets/img/vejo.png')">
+                
+                      </div>
+                  </ion-col>
+                 
+                
+                </ion-row>
+              </ion-grid>
+
+             
+       
+        
+      
+      <!--ion-card class="comunhao-card" (click)="goToCategoryPosts('2', 'Primeiro Deus')">
         <ion-card-content  class="padding">
-                <ion-item>
-                        <ion-avatar item-start>
-                            <img src="assets/img/bg-teste.jpeg">
-                        </ion-avatar>
-                        <h2><strong>Encontro Life</strong></h2>
-                        <p>Descrição</p>
-                      </ion-item>
+          <ion-item class="comunhao-item">
+            <ion-avatar item-start>
+                <img src="assets/img/capa.png">
+            </ion-avatar>
+            <h1><strong>Primeiro Deus</strong></h1>
+            <p>Descrição</p>
+          </ion-item>
         </ion-card-content>
       </ion-card>
-      <ion-card >
+      <ion-card class="comunhao-card" (click)="goVideos()">
           <ion-card-content class="padding">
-                <ion-item>
-                        <ion-avatar item-start>
-                            <img src="assets/img/bg-teste.jpeg">
-                        </ion-avatar>
-                        <h2><strong>Espaço Life</strong></h2>
-                        <p>Descrição</p>
-                      </ion-item>
+              <ion-item class="comunhao-item">
+                  <ion-avatar item-start>
+                      <img src="assets/img/bg-teste.jpeg">
+                  </ion-avatar>
+                  <h1><strong>Ponto 1</strong></h1>
+                  <p>Descrição</p>
+                </ion-item>
           </ion-card-content>
         </ion-card>
-        <ion-card >
+        <ion-card class="comunhao-card" >
             <ion-card-content class="padding">
-                    <ion-item>
-                            <ion-avatar item-start>
-                                <img src="assets/img/bg-teste.jpeg">
-                            </ion-avatar>
-                            <h2><strong>Finanças para Jovens</strong></h2>
-                            <p>Descrição</p>
-                          </ion-item>
+                <ion-item class="comunhao-item">
+                    <ion-avatar item-start>
+                        <img src="assets/img/bg-teste.jpeg">
+                    </ion-avatar>
+                    <h1><strong>Finanças</strong></h1>
+                    <p>Descrição</p>
+                  </ion-item>
             </ion-card-content>
           </ion-card>
-          <ion-card >
+          <ion-card class="comunhao-card" >
               <ion-card-content class="padding">
-                    <ion-item>
-                            <ion-avatar item-start>
-                                <img src="assets/img/bg-teste.jpeg">
-                            </ion-avatar>
-                            <h2><strong>Te vejo na Sexta</strong></h2>
-                            <p>Descrição</p>
-                          </ion-item>
+                  <ion-item class="comunhao-item">
+                      <ion-avatar item-start>
+                          <img src="assets/img/bg-teste.jpeg">
+                      </ion-avatar>
+                      <h1><strong>Culto Jovem</strong></h1>
+                      <p>Descrição</p>
+                    </ion-item>
               </ion-card-content>
-            </ion-card>
+            </ion-card-->
       <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="doInfinite($event)">
         <ion-infinite-scroll-content
         loadingSpinner="bubbles"

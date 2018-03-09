@@ -1,4 +1,4 @@
-page-post {
+page-relacionamento {
     .post {
       padding: 6px;
     }
@@ -34,5 +34,16 @@ page-post {
     .post img{
       height: 100%;
     }
+    .card-md {
+
+      // border-radius: 50px !important;
+      background-color: red !important;
+     }
+     .grid{
+      padding: 0 !important;
+  }
+  .col {
+      padding: 0 !important;
+  }
   }
   

@@ -1,8 +1,14 @@
-page-post {
+page-comunhao {
     .post {
-      padding: 6px;
+      padding: 60px;
     }
-  
+
+    .grid{
+      padding: 0 !important;
+  }
+  .col {
+      padding: 0 !important;
+  }
     .post-title{
       display: block;
       font-size: 1.8rem;
@@ -34,5 +40,25 @@ page-post {
     .post img{
       height: 100%;
     }
+ 
   }
+  .comunhao-card {
+    background-color: #f77e0d !important;
+    
+   }
+
+   .comunhao-item{
+     background-color: #f77e0d;
+   }
   
+   .comunhao-item h1{
+    color: white;
+  }
+ 
+  
+  .comunhao-item p{
+    color: white !important;
+  }
+  .gradient{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.81));
+  }

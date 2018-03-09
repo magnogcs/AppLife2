@@ -8,6 +8,7 @@ import { NavController, LoadingController, NavParams, Events  } from 'ionic-angu
 import { WordpressService } from '../../services/wordpress.service';
 import { AuthenticationService } from '../../services/authentication.service';
 import { VideosPage } from '../videos/videos';
+import { IndexPage } from '../index/index';
 import {Observable} from 'rxjs/Observable';
 import {YtProvider} from './../../providers/yt/yt';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
@@ -147,6 +148,10 @@ searchPlaylists(){
  }
  goVideos(){
   this.navCtrl.push(VideosPage);
+ }
+
+ goIndex(){
+   this.navCtrl.push(IndexPage);
  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideosPage');
