@@ -16,6 +16,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CommentPage } from '../pages/comment/comment';
 import { IndexPage } from '../pages/index/index';
 
+
+
 import { WordpressService } from '../services/wordpress.service';
 import { AuthenticationService } from '../services/authentication.service';
 
@@ -43,7 +45,8 @@ import { SideMenuContentComponent } from '../pages/menu/side-menu-content.compon
     VideosPage,
     CommentPage,
     SideMenuContentComponent,
-    IndexPage
+    IndexPage,
+    
     
     
   ],
@@ -66,7 +69,8 @@ import { SideMenuContentComponent } from '../pages/menu/side-menu-content.compon
     PlaylistPage,
     VideosPage,
     CommentPage,
-    IndexPage
+    IndexPage,
+   
     
   ],
   providers: [

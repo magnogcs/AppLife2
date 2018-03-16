@@ -1,11 +1,11 @@
 
 
       <ion-header>
-        <ion-navbar color="danger">
+        <ion-navbar color="dark">
           <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
           </button>
-          <ion-title>Home</ion-title>
+          <ion-title>Estilo life</ion-title>
         </ion-navbar>
        
       </ion-header>
@@ -46,7 +46,7 @@
   
   
   <ion-content>
-      <div class="hero slide-up gradient" style="box-shadow:none;height: 32vh; background-image:url('assets/img/capa2.png')">
+      <div (click)="openVideo()" class="hero slide-up gradient" style="box-shadow:none;height: 32vh; background-image:url('assets/img/capa2.png')">
           
       </div>
       <ion-grid style="margin-top: 20px;">
@@ -73,10 +73,21 @@
                   </div>
               </ion-col>
               <ion-col>
-                  <div class="hero slide-up gradient" style="height: 30vh; width: auto; background-image:url('assets/img/licao.png')">
+                  <div (click)="goToCategoryPosts('12', 'Licao')"class="hero slide-up gradient" style="height: 30vh; width: auto; background-image:url('assets/img/licao.png')">
             
                   </div>
               </ion-col>
+            
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row align-items-start>
+              <ion-col>
+                  <div (click)="goFotos()" class="hero slide-up gradient" style="height: 13.4vh; width: auto;background-image:url('assets/img/fotos.png')">
+            
+                  </div>
+              </ion-col>
+             
             
             </ion-row>
           </ion-grid>

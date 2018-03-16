@@ -102,4 +102,10 @@ export class RelacionamentoPage {
   Post(){
       this.navCtrl.push(HomePage);
   }
+  goToCategoryPosts(categoryId, categoryTitle){
+    this.navCtrl.push(HomePage, {
+      id: categoryId,
+      title: categoryTitle
+    })
+  }
 }

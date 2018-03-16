@@ -1,11 +1,11 @@
 
 
       <ion-header>
-          <ion-navbar color="danger">
+          <ion-navbar color="dark">
             <button ion-button menuToggle>
               <ion-icon name="menu"></ion-icon>
             </button>
-            <ion-title>Home</ion-title>
+            <ion-title>Missão</ion-title>
           </ion-navbar>
          
         </ion-header>
@@ -49,10 +49,23 @@
         <div class="hero slide-up gradient" style="box-shadow:none;height: 32vh; background-image:url('assets/img/missao-capa.png')">
             
         </div>
+       
         <ion-grid style="margin-top: 20px;">
+          <ion-row align-items-start>
+            <ion-col>
+                <div  (click)="goToCategoryPosts('3', 'Desafios')" class="hero slide-up gradient" style="height: 14.4vh; width: auto;background-image:url('assets/img/desafio.png')">
+          
+                </div>
+            </ion-col>
+           
+          
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
             <ion-row align-items-start>
               <ion-col>
-                  <div (click)="goToCategoryPosts('2', 'Primeiro Deus')" class="hero slide-up gradient" style="height:14.4vh; width: auto; background-image:url('assets/img/global.png')">
+                  <div (click)="goToCategoryPosts('9', 'Global')" class="hero slide-up gradient" style="height:14.4vh; width: auto; background-image:url('assets/img/global.png')">
             
                   </div>
               </ion-col>
@@ -64,7 +77,7 @@
           <ion-grid>
               <ion-row align-items-start>
                 <ion-col>
-                    <div (click)="goVideos()" class="hero slide-up gradient" style="height: 14.4vh; width: auto;background-image:url('assets/img/semana.png')">
+                    <div  (click)="goToCategoryPosts('10', 'Semana')" class="hero slide-up gradient" style="height: 14.4vh; width: auto;background-image:url('assets/img/semana.png')">
               
                     </div>
                 </ion-col>
@@ -76,7 +89,7 @@
             <ion-grid>
                 <ion-row align-items-start>
                   <ion-col>
-                      <div class="hero slide-up gradient" style="height: 14.4vh; width: auto;background-image:url('assets/img/calebe.png')">
+                      <div  (click)="goToCategoryPosts('11', 'Calebe')" class="hero slide-up gradient" style="height: 14.4vh; width: auto;background-image:url('assets/img/calebe.png')">
                 
                       </div>
                   </ion-col>
@@ -85,17 +98,7 @@
                 </ion-row>
               </ion-grid>
 
-              <ion-grid>
-                  <ion-row align-items-start>
-                    <ion-col>
-                        <div class="hero slide-up gradient" style="height: 14.4vh; width: auto;background-image:url('assets/img/culto.png')">
-                  
-                        </div>
-                    </ion-col>
-                   
-                  
-                  </ion-row>
-                </ion-grid>
+             
        
         
       

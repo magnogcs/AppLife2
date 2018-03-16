@@ -1,15 +1,15 @@
 <ion-header>
-    <ion-navbar color="danger">
+    <ion-navbar color="dark">
         <ion-title *ngFor="let category of categories">
           Title
         </ion-title>
-        <ion-buttons end>
+        <!--ion-buttons end>
           <button ion-button (click)="doClick()">
             <ion-icon name="more"></ion-icon>
           </button>
-        </ion-buttons>
+        </ion-buttons-->
       </ion-navbar>
-      <div class="hero slide-up" style="height: 100px; background-image:url('../../assets/img/bg-teste.jpeg')">
+      <div class="hero slide-up" style="height: 32vh; background-image:url('../../assets/img/post.png')">
         
       </div>
   </ion-header>
@@ -81,7 +81,7 @@ width: 56px;
 }</style>
 
 
-<ion-content padding class="content">
+<ion-content style="" padding class="content">
   <ion-card (click)="postTapped($event, post)" *ngFor="let post of posts" >
     <ion-card-content >
       <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>

@@ -1,7 +1,7 @@
 import { Component, ViewChild  } from '@angular/core';
 import { ReplaySubject } from "rxjs/ReplaySubject";
 import { ArrayObservable } from "rxjs/observable/ArrayObservable";
-import { Platform, Nav, MenuController, AlertController } from 'ionic-angular';
+import { Platform,NavController, NavParams, Nav, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
@@ -15,15 +15,19 @@ import { SideMenuSettings } from '../pages/menu/models/side-menu-settings';
 import { MenuOptionModel } from '../pages/menu/models/menu-option-model';
 import { MissaoPage } from '../pages/missao/missao';
 import { IndexPage } from '../pages/index/index';
+import { ComunhaoPage } from '../pages/comunhao/comunhao';
+import { RelacionamentoPage } from '../pages/relacionamento/relacionamento';
+
 
 
 @Component({
   templateUrl: 'app.html'
 })
 
+
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
-
+ 
 	// Get the instance to call the public methods
 	@ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
 
@@ -45,7 +49,6 @@ export class MyApp {
 	};
 
 private unreadCountObservable: any = new ReplaySubject<number>(0);
- 
 
   constructor(
     private platform: Platform,
@@ -83,55 +86,103 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 		// Load simple menu options
 		// ------------------------------------------
 		this.options.push({
-			iconName: 'home',
+			iconName: 'md-home',
+			displayName: 'Inicio',
+			component: IndexPage
+			
+		
+		});
+		this.options.push({
+			iconName: 'ios-heart',
 			displayName: 'Comunhão',
-			component: HomePage,
-
-			// This option is already selected
-			selected: true
+			component: ComunhaoPage,
+			
+		
 		});
 
 		this.options.push({
-			iconName: 'bookmarks',
+			iconName: 'md-contacts',
 			displayName: 'Relacionamento',
-			component: MissaoPage
+			component: RelacionamentoPage,
+			
 		});
 
 		this.options.push({
-			iconName: 'chatbubbles',
+			iconName: 'md-globe',
 			displayName: 'Missão',
-			component: MissaoPage
+			component: MissaoPage,
+			
 		});
 
 		this.options.push({
-			iconName: 'chatbubbles',
+			iconName: 'logo-youtube',
 			displayName: 'Vídeos',
-			component: MissaoPage
+			custom: {
+				isExternalLink: true,
+				externalUrl: 'https://www.youtube.com/watch?v=C4oIrk7q3k0'
+			}
+		
+			
+			
 		});
 
 		this.options.push({
-			iconName: 'chatbubbles',
+			iconName: 'md-bookmark',
 			displayName: 'Materiais',
-			component: MissaoPage
+			custom: {
+				isExternalLink: true,
+				externalUrl: 'http://bit.ly/BahiaCentral'
+			}
+			
+			
 		});
 
 		this.options.push({
-			iconName: 'chatbubbles',
+			iconName: 'md-book',
 			displayName: 'Lição',
-			component: MissaoPage
+			
 		});
 
 		this.options.push({
-			iconName: 'chatbubbles',
+			iconName: 'ios-bookmarks',
 			displayName: 'Bíblia',
-			component: MissaoPage
+			
 		});
+		this.options.push({
+			iconName: 'md-musical-note',
+			displayName: 'Playlist',
+			custom: {
+				isExternalLink: true,
+				externalUrl: 'https://open.spotify.com/user/12155906793/playlist/4w4P1gA8q6SKsQ47cSeRHd?si=J2mxooG0SH-4Jl1Gh_pEyw'
+			}
+		});
+		
+		this.options.push({
+			iconName: 'md-images',
+			displayName: 'Fotos',
+			custom: {
+				isExternalLink: true,
+				externalUrl: 'https://tagboard.com/EstiloLife/414824'
+			}
+			
+		});
+
+		this.options.push({
+			iconName: 'ios-shirt-outline',
+			displayName: 'Compre sua camisa',
+			
+		});
+
+		
+
+		
+	
 /*
 		this.options.push({
 			iconName: 'bowtie',
 			displayName: 'With Badge',
 			badge: ArrayObservable.of('NEW'),
-			component: MissaoPage
+			
 		});
 
 		// Load options with nested items (with icons)
@@ -142,18 +193,18 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 				{
 					iconName: 'basket',
 					displayName: 'Sub Option 1',
-					component: MissaoPage
+					
 				},
 				{
 					iconName: 'bookmark',
 					displayName: 'Sub Option 2',
-					component: MissaoPage
+					
 				},
 				{
 					iconName: 'bug',
 					displayName: 'With Badge',
 					badge: this.unreadCountObservable,
-					component: MissaoPage
+					
 				}
 			]
 		});
@@ -165,19 +216,19 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 			subItems: [
 				{
 					displayName: 'Sub Option 4',
-					component: MissaoPage
+					
 				},
 				{
 					displayName: 'Sub Option 5',
-					component: MissaoPage
+					
 				},
 				{
 					displayName: 'Sub Option 6',
-					component: MissaoPage
+					
 				},
 				{
 					displayName: 'Sub Option 7',
-					component: MissaoPage
+					
 				}
 			]
 		});
@@ -221,10 +272,10 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 				this.presentAlert('You\'ve clicked the logout option!');
 			} else if (option.custom && option.custom.isExternalLink) {
 				let url = option.custom.externalUrl;
-				window.open(url, '_blank');
+				window.open(url);
 			} else {
 				// Redirect to the selected page
-				this.navCtrl.setRoot(option.component || MissaoPage, { 'title': option.displayName });
+				this.navCtrl.push(option.component || IndexPage);
 			}
 		});
 	}
