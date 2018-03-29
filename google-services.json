@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "546066873752",
+    "firebase_url": "https://estilolife-92844.firebaseio.com",
+    "project_id": "estilolife-92844",
+    "storage_bucket": "estilolife-92844.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546066873752:android:bc050a434f7b3efb",
+        "android_client_info": {
+          "package_name": "ionic.wordpress.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546066873752-e77c15sgqptkm0pps45rr7dch3bq89iv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVMbliHPqvq54Cm4LmGRalWxc4wJE0bis"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

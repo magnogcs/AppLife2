@@ -20,6 +20,7 @@ import { RelacionamentoPage } from '../pages/relacionamento/relacionamento';
 
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -56,11 +57,21 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
     private splashScreen: SplashScreen,
     private alertCtrl: AlertController,
     private menuCtrl: MenuController,
-    authenticationService: AuthenticationService
+	authenticationService: AuthenticationService,
+	
   ) 
   
   
   {
+	var notificationOpenedCallback = function(jsonData) {
+		console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+	  };
+  
+	  window["plugins"].OneSignal
+		.startInit("dcc27f13-0f0a-405b-a3b3-463e51437e77", "546066873752")
+		.handleNotificationOpened(notificationOpenedCallback)
+		.endInit();
+	
     this.initializeApp();
 	}
 

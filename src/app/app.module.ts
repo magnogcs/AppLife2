@@ -18,6 +18,7 @@ import { IndexPage } from '../pages/index/index';
 
 
 
+
 import { WordpressService } from '../services/wordpress.service';
 import { AuthenticationService } from '../services/authentication.service';
 
@@ -81,7 +82,8 @@ import { SideMenuContentComponent } from '../pages/menu/side-menu-content.compon
     AuthenticationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     YtProvider,
-    YoutubeVideoPlayer
+    YoutubeVideoPlayer,
+   
   ]
 })
 export class AppModule {}

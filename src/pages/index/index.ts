@@ -10,6 +10,7 @@ import {YtProvider} from './../../providers/yt/yt';
 import { Platform } from 'ionic-angular/platform/platform';
 import {Observable} from 'rxjs/Observable';
 
+
 /**
  * Generated class for the IndexPage page.
  *
@@ -25,8 +26,11 @@ import {Observable} from 'rxjs/Observable';
 export class IndexPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private plt: Platform, private youtube:  YoutubeVideoPlayer, private ytProvider: YtProvider) {
+  
+   
   }
 
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad IndexPage');
   }
