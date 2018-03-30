@@ -81,10 +81,10 @@ width: 56px;
 }</style>
 
 
-<ion-content style="" padding class="content">
-  <ion-card (click)="postTapped($event, post)" *ngFor="let post of posts" >
+<ion-content padding class="content">
+  <ion-card  style="background-color: #cc5431;" (click)="postTapped($event, post)" *ngFor="let post of posts" >
     <ion-card-content >
-      <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
+      <ion-card-title style="color: #fff" [innerHTML]="post.title.rendered"></ion-card-title>
       <!--p [innerHTML]="post.excerpt.rendered"></p-->
     </ion-card-content>
     <ion-row no-padding>
