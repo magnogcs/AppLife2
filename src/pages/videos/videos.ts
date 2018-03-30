@@ -31,7 +31,7 @@ searchPlaylists(){
   })
 }
  openPlaylistId(id){
-   this.navCtrl.push(PlaylistPage, {id: id});
+   this.navCtrl.push(PlaylistPage, {id: 'PLgO0NAZSgdWcps-mgdewqIJswgAmz7XAs'});
  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideosPage');

@@ -9,6 +9,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import {YtProvider} from './../../providers/yt/yt';
 import { Platform } from 'ionic-angular/platform/platform';
 import {Observable} from 'rxjs/Observable';
+import { PlaylistPage } from '../playlist/playlist';
 
 
 /**
@@ -56,6 +57,9 @@ export class IndexPage {
       window.open('https://www.youtube.com/watch?v=C4oIrk7q3k0');
     }
    }
+   openPlaylistId(id){
+    this.navCtrl.push(PlaylistPage, {id: id});
+  }
    goToCategoryPosts(categoryId, categoryTitle){
     this.navCtrl.push(HomePage, {
       id: categoryId,

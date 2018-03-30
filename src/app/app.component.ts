@@ -17,6 +17,8 @@ import { MissaoPage } from '../pages/missao/missao';
 import { IndexPage } from '../pages/index/index';
 import { ComunhaoPage } from '../pages/comunhao/comunhao';
 import { RelacionamentoPage } from '../pages/relacionamento/relacionamento';
+import { CamisaPage } from '../pages/camisa/camisa';
+
 
 
 
@@ -86,7 +88,7 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 
 		// Change the value for the batch every 5 seconds
 		setInterval(() => {
-			this.unreadCountObservable.next(Math.floor(Math.random() * 10));
+			this.unreadCountObservable.next(Math.floor(Math.random() * 1));
 		}, 5000);
 
 	}
@@ -148,17 +150,17 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 			
 		});
 
-		this.options.push({
+		/*this.options.push({
 			iconName: 'md-book',
 			displayName: 'Lição',
 			
-		});
+		});*/
 
-		this.options.push({
+		/*this.options.push({
 			iconName: 'ios-bookmarks',
 			displayName: 'Bíblia',
 			
-		});
+		});*/
 		this.options.push({
 			iconName: 'md-musical-note',
 			displayName: 'Playlist',
@@ -181,6 +183,7 @@ private unreadCountObservable: any = new ReplaySubject<number>(0);
 		this.options.push({
 			iconName: 'ios-shirt-outline',
 			displayName: 'Compre sua camisa',
+			component: CamisaPage,
 			
 		});
 

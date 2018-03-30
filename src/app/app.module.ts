@@ -15,6 +15,7 @@ import { MissaoPage } from '../pages/missao/missao';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CommentPage } from '../pages/comment/comment';
 import { IndexPage } from '../pages/index/index';
+import { CamisaPage } from '../pages/camisa/camisa';
 
 
 
@@ -47,6 +48,7 @@ import { SideMenuContentComponent } from '../pages/menu/side-menu-content.compon
     CommentPage,
     SideMenuContentComponent,
     IndexPage,
+    CamisaPage
     
     
     
@@ -71,6 +73,7 @@ import { SideMenuContentComponent } from '../pages/menu/side-menu-content.compon
     VideosPage,
     CommentPage,
     IndexPage,
+    CamisaPage
    
     
   ],
